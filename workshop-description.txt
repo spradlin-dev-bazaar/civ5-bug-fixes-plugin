@@ -1,0 +1,25 @@
+[h1]Small Bugfix Compendium (Bazaar 0.5)[/h1]
+Fixes small bugs in Civilization V: Brave New World, as a plugin for the Bazaar Multi-DLL Mod Loader.
+
+[h2]What it fixes[/h2]
+[list]
+[*][b]Scouts stuck at sea.[/b] Once your units can embark, but before they can cross deep ocean, automated explorers no longer move back and forth between the same coastal tiles forever.
+[*][b]Auto End Turn and new cities.[/b] With Auto End Turn on, founding a city as the last thing in a turn no longer ends the turn before you choose what the city builds. The same goes for other choices that turn up after the turn was ready to end.
+[*][b]Strategic resource warning.[/b] The warning that you're using more of a strategic resource, such as Iron, than you have no longer disappears at once. It stays until the end of the turn, or until you're no longer short.
+[*][b]Shift+Enter.[/b] After you end a turn with Shift+Enter, a later turn no longer skips past a unit whose long move was blocked. The game stops for it, as it normally does.
+[*][b]The AI's spy memory.[/b] After you load a game, the AI no longer forgets its spy history, such as which civilizations have no technologies left to steal. Saves also no longer grow a little after every load.
+[*][b]Coups against a defended city-state.[/b] A spy that the city-state's ally keeps there now makes coups harder, as intended. Before, the game gave the bonus meant for an undefended city-state even when the ally had a spy there, so coups were easier than intended.
+[*][b]The coup roll.[/b] A coup now succeeds as often as its chance says. Before, it succeeded one time in a hundred more often, so even a coup at 0% could succeed.
+[*][b]For mod makers:[/b] the Lua function Plot:GetActiveFogOfWarMode() now tells visible, unexplored and previously seen tiles apart. Before, it reported every tile as seen before but not visible now.
+[/list]
+
+[h2]You need[/h2]
+Runs on Bazaar 0.5.x. Subscribe to Bazaar Multi-DLL Mod Loader and Bazaar - VMC Bootstrap (required) too.
+
+[h2]Credits[/h2]
+The Community Patch Project's bug reports and change notes pointed to four of these bugs: the strategic resource warning, Shift+Enter, the AI's spy memory and the Lua function. Thanks to everyone who found and reported them. This mod's fixes are written from scratch for Bazaar.
+
+[h2]Links[/h2]
+[list]
+[*][url=https://github.com/spradlin-dev-bazaar/civ5-bug-fixes-plugin]Source code on GitHub[/url], under the MIT license
+[/list]

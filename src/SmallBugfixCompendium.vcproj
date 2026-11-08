@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9.00"
+	Name="SmallBugfixCompendium"
+	ProjectGUID="{3DF11371-BED1-46F5-B545-3F03E4AEDB76}"
+	RootNamespace="SmallBugfixCompendium"
+	Keyword="Win32Proj"
+	TargetFrameworkVersion="196613"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(ProjectDir)out"
+			IntermediateDirectory="$(ProjectDir)out\obj"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(BAZAAR_SDK)\CivPlugin.vsprops"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCCLCompilerTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\SmallBugfixCompendium.dll"
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<File
+			RelativePath=".\SmallBugfixCompendium.cpp"
+			>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

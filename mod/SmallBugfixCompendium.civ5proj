@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Deploy" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <ProjectGuid>{4274e3af-5455-49a8-8537-72bcbaf409d5}</ProjectGuid>
+    <Name>Small Bugfix Compendium (Bazaar 0.5)</Name>
+    <Guid>b0241fa0-6ebc-4e38-a735-8dfde2b99b7b</Guid>
+    <ModVersion>1</ModVersion>
+    <Stability>Experimental</Stability>
+    <Teaser>Fixes small bugs in Brave New World, as a plugin for the Bazaar Multi-DLL Mod Loader.</Teaser>
+    <Description>Fixes small bugs in Brave New World, as a plugin for the Bazaar Multi-DLL Mod Loader.[NEWLINE][NEWLINE]What it fixes:[NEWLINE][ICON_BULLET] Automated scouts no longer get stuck going back and forth at sea before they can cross deep ocean.[NEWLINE][ICON_BULLET] Auto End Turn waits for you to choose what a new city builds, and for other choices that turn up late in a turn.[NEWLINE][ICON_BULLET] The warning that you're short of a strategic resource no longer disappears at once.[NEWLINE][ICON_BULLET] After you end a turn with Shift+Enter, later turns still stop for a unit whose long move was blocked.[NEWLINE][ICON_BULLET] The AI keeps its spy history when you load a game, and saves no longer grow after each load.[NEWLINE][ICON_BULLET] A spy kept in a city-state by its ally now makes coups there harder, as intended.[NEWLINE][ICON_BULLET] A coup succeeds exactly as often as its chance says.[NEWLINE][ICON_BULLET] For mod makers: Plot:GetActiveFogOfWarMode() in Lua now reports visible and unexplored tiles correctly.[NEWLINE][NEWLINE]Needs Bazaar 0.5.x and Bazaar - VMC Bootstrap (required).</Description>
+    <Authors>spradlin-dev / maddachshund</Authors>
+    <SpecialThanks>
+    </SpecialThanks>
+    <HideSetupGame>false</HideSetupGame>
+    <AffectsSavedGames>true</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>true</SupportsSinglePlayer>
+    <SupportsMultiplayer>false</SupportsMultiplayer>
+    <SupportsHotSeat>false</SupportsHotSeat>
+    <SupportsMac>false</SupportsMac>
+    <ReloadAudioSystem>false</ReloadAudioSystem>
+    <ReloadLandmarkSystem>false</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>false</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>false</ReloadUnitSystem>
+    <AssemblyName>SmallBugfixCompendium</AssemblyName>
+    <RootNamespace>SmallBugfixCompendium</RootNamespace>
+    <ModDependencies>
+      <Association>
+        <Type>Dlc</Type>
+        <Name>Expansion - Brave New World</Name>
+        <Id>6DA07636-4123-4018-B643-6575B4EC336B</Id>
+        <MinVersion>0</MinVersion>
+        <MaxVersion>999</MaxVersion>
+      </Association>
+      <Association>
+        <Type>Mod</Type>
+        <Name>Bazaar Multi-DLL Mod Loader</Name>
+        <Id>b829cadb-b570-46c5-a0ba-419434eb6398</Id>
+        <MinVersion>0</MinVersion>
+        <MaxVersion>999</MaxVersion>
+      </Association>
+    </ModDependencies>
+    <ModReferences />
+    <ModBlockers />
+    <ModActions>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>SmallBugfixCompendium.sql</FileName>
+      </Action>
+    </ModActions>
+    <ModContent />
+    <ModProperties>
+    </ModProperties>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Package Only' ">
+    <PackageMod>true</PackageMod>
+    <DeployMod>false</DeployMod>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Deploy Only' ">
+    <PackageMod>false</PackageMod>
+    <DeployMod>true</DeployMod>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="SmallBugfixCompendium.dll">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="SmallBugfixCompendium.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Firaxis\ModBuddy\Civ5Mod.targets" />
+</Project>

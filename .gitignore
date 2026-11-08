@@ -1,0 +1,10 @@
+Build/
+Packages/
+src/out/
+mod/*.dll
+__pycache__/
+
+# Visual Studio 2008 per-user files
+*.suo
+*.ncb
+*.user
